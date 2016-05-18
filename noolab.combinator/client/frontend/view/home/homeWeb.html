@@ -1,0 +1,44 @@
+<template name="homeWeb">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover" border="0">
+                            <tbody class="list">
+                            	{{#each getAllWEbsite}}
+	                                <tr>
+	                                	<td><ol><li></li></ol></td>
+	                                    <td>
+	                                    	<a href="{{url}}" class="title">{{title}}</a>
+	                                    	<a href="#" class="web subtext" id="web_{{_id}}">({{website}})</a>
+	                                    </td>
+	                                </tr>
+	                                <tr>
+	                                	<td colspan="1"></td>
+	                                	<td class="subtext">
+	                                		<span>
+	                                			<a href="#" id="like_{{_id}}" class="like addlike">Like | </a>
+	                                    		<a href="#" id="unlike_{{_id}}" class="hidden addunlike">unlike | </a>
+	                                		</span>
+        									<span class="score" id="score">{{getFavorite}} points
+        									</span> by <a href="/admin/profileAuthor/:_id">{{getAuthorname author}} | </a> 
+        									<span class="age">
+        										<a href="#">{{livestamp date}}</a>
+        									</span>  | <span>
+        										<a href="#">comments</a></span>
+        								</td>
+        							</tr>
+        							
+	                            {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.panel-body -->
+			</div>
+		</div>
+	</div>
+</template>

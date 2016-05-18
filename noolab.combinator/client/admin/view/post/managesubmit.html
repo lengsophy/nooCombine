@@ -1,0 +1,41 @@
+<template name="managesubmit">
+    <div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="col-md-3">
+					{{> adminmenu}}
+				</div>
+				<div class="col-md-9">
+                    <p class="breadcrumb">
+                        All Post
+                    </p>
+					<table class="table table-responsive">
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Title</th>
+								<th>Category</th>
+								<th colspan="2">Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							{{#each managesubmit}}
+								<tr>
+									<td>{{index}}</td>
+									<td>{{title}}</td>
+									<td>{{getCategory category}}</td>
+									<td>
+										<a class="glyphicon glyphicon-trash center-block" href="#" id="remove"></a>
+									</td>
+									<td>
+										<a class="glyphicon glyphicon-edit center-block" href="updatesubmit/{{_id}}"></a>
+									</td>
+								</tr>
+							{{/each}}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
